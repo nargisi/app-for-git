@@ -1,0 +1,39 @@
+.header__container {
+    max-height: 72px;
+    background-color: #0064EB;
+    display: flex;
+}
+
+
+.header__logo {
+    background: #FFFFFF;
+    width: 41px;
+    height: 40px;
+}
+
+
+.heder__searchform{
+    display: flex;
+}
+
+
+.header__searchform-icon{
+    width: 14px;
+    height: 14px;
+    color: #808080;
+}
+
+
+.header__searchform-input{
+    font-family: 'Inter',  Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #808080;
+    background: #FFFFFF;
+    border-radius: 6px;
+}
