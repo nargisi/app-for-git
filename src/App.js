@@ -1,16 +1,15 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import InitialState from './components/InitialState/InitialState';
+import './App.css';
 
 function App() {
   return (
     <div className="page">
-      <Switch>
-        <Route path="/">
-          <InitialState />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<InitialState />} />
+      </Routes>
     </div>
   );
 }
