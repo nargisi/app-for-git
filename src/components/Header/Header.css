@@ -41,7 +41,7 @@
 
 
 .header__searchform-input{
-    font-family: 'Inter',  Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
     height: 40px;
     flex-grow: 1;
     outline: none;
@@ -63,4 +63,16 @@
 
 .header__searchform-input:focus{
     border-bottom: 1px solid rgba(0, 0, 0, .4);
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .header__container {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .header__logo {
+        margin-left: 10px;
+    }
 }

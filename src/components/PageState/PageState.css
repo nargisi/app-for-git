@@ -1,0 +1,28 @@
+.page-state__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 210px;
+    height: 86vh;
+    margin: 0 auto;
+}
+
+
+.page-state__icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 47px;
+}
+
+
+.page-state__title {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+    color: #808080;
+    margin: 0;
+}
