@@ -1,0 +1,57 @@
+.userInfo__statistics{
+    display: flex;
+    gap: 24px;
+}
+
+
+.userInfo__name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+
+.userInfo__nickname {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0064EB;
+    cursor: pointer;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+
+.userInfo__nickname:hover {
+    opacity: 0.7;
+}
+
+
+.userInfo__statistics-follow {
+    margin: 0;
+}
+
+
+.userInfo__statistic-icons {
+    background-image: url(../../images/shared.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+
+.userInfo__statistic-icon {
+    background-image: url(../../images/icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
