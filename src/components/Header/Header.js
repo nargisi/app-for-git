@@ -1,7 +1,6 @@
-import React from 'react';
 import '../Header/Header.css';
 
-function Header() {
+function Header({ onKeyDown, value, onChange }) {
   return (
     <header className="header__container">
       <div className="header__logo"></div>
@@ -11,6 +10,9 @@ function Header() {
           className="header__searchform-input"
           type="text"
           placeholder="Enter GitHub username"
+          onKeyDown={onKeyDown}
+          value={value}
+          onChange={onChange}
         ></input>
       </div>
     </header>
