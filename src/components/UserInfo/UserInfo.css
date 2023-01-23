@@ -1,6 +1,5 @@
 .userInfo__statistics{
     display: flex;
-    gap: 24px;
 }
 
 
@@ -40,18 +39,41 @@
 
 
 .userInfo__statistic-icons {
-    background-image: url(../../images/shared.svg);
+    background-image: url(../../images/Followers.svg);
     background-size: contain;
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
+    margin-right: 12px;
 }
 
 
 .userInfo__statistic-icon {
-    background-image: url(../../images/icon.svg);
+    background-image: url(../../images/Following.svg);
     background-size: contain;
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
+    margin-right: 12px;
+    margin-left: 20px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .repositories__title {
+       text-align: center;
+    }
+    .userInfo__name {
+        text-align: center;
+    }
+    .userInfo__nickname {
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .userInfo__statistics{
+        flex-direction: column;
+    }
 }

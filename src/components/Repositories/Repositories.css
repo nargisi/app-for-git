@@ -42,3 +42,15 @@
     color: #000000;
     margin: 0;
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .repositories__title {
+       text-align: center;
+    }
+    .repositories__item {
+        padding: 14px 16px;
+        margin-bottom: 20px;
+    }
+}

@@ -11,7 +11,7 @@ function App() {
     <div className="page">
       <Routes>
         <Route path="/" element={<InitialPage />} />
-        <Route path="/not" element={<EmptyState />} />
+        {/* <Route path="/not" element={<EmptyState />} /> */}
         <Route path="/repos" element={<Main />} />
       </Routes>
     </div>

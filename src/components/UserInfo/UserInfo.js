@@ -7,12 +7,10 @@ function UserInfo() {
       <h2 className="userInfo__name">Dan Abramov</h2>
       <h3 className="userInfo__nickname">gaearon</h3>
       <div className="userInfo__statistics">
-        <p className="userInfo__statistics-follow">
-          <span className="userInfo__statistic-icons"></span>65.8k followers
-        </p>
-        <p className="userInfo__statistics-follow">
-          <span className="userInfo__statistic-icon"></span>171 following
-        </p>
+        <span className="userInfo__statistic-icons"></span>
+        <p className="userInfo__statistics-follow">65.8k followers</p>
+        <span className="userInfo__statistic-icon"></span>
+        <p className="userInfo__statistics-follow">171 following</p>
       </div>
     </div>
   );

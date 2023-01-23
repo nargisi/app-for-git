@@ -14,6 +14,16 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
+  getUserInfo(username) {
+    return fetch(`${this._baseURL}/users/${username}`, {
+      headers: { ...this._headers },
+    })
+      .then(this._checkResponse)
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   getRepositories(username) {
     return fetch(`${this._baseURL}/users/${username}/repos`, {
       headers: { ...this._headers },
