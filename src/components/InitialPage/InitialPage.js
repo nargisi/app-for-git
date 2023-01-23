@@ -3,12 +3,11 @@ import Header from '../Header/Header';
 import Icon from '../../images/icon.svg';
 import PageState from '../PageState/PageState';
 import api from '../../utils/Api';
-import EmptyState from '../EmptyState/EmptyState';
 import Preloader from '../Preloader/Preloader';
 import Main from '../Main/Main';
 
 function InitialPage() {
-  const [person, setPerson] = useState({});
+  const [person, setPerson] = useState(null);
   const [repos, setRepos] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [searchIsCompleted, setSearchIsCompleted] = useState(false);
@@ -28,11 +27,10 @@ function InitialPage() {
         .then((res) => {
           setRepos(res[0]);
           setPerson(res[1]);
-          // console.log(res);
         })
         .catch((err) => {
           if (err.status === 404) {
-            setPerson({});
+            setPerson(null);
             console.log(err);
           }
         })
@@ -42,8 +40,6 @@ function InitialPage() {
         });
     }
   };
-  // console.log(repos);
-  // console.log(person);
 
   if (isLoading) {
     return <Preloader />;

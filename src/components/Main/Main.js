@@ -2,10 +2,14 @@ import React from 'react';
 import '../../components/Main/Main.css';
 import Card from '../Card/Card';
 import EmptyListRepos from '../EmptyListRepos/EmptyListRepos';
+import EmptyState from '../EmptyState/EmptyState';
 import Repositories from '../Repositories/Repositories';
 import UserInfo from '../UserInfo/UserInfo';
 
 function Main({ repos, person }) {
+  if (!person) {
+    return <EmptyState />;
+  }
   return (
     <>
       <main className="main">
