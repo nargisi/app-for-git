@@ -15,6 +15,10 @@
 }
 
 
+.userInfo__link {
+    text-decoration: none;
+}
+
 .userInfo__nickname {
     font-family: 'Inter';
     font-style: normal;

@@ -1,22 +1,25 @@
 import React from 'react';
 import '../../components/Main/Main.css';
 import Card from '../Card/Card';
-import Header from '../Header/Header';
 import Repositories from '../Repositories/Repositories';
 import UserInfo from '../UserInfo/UserInfo';
 
-function Main() {
+function Main({ repos, person }) {
   return (
     <>
-      <Header />
       <main className="main">
         <div className="main__container">
           <div className="main__about-user">
-            <Card />
-            <UserInfo />
+            <Card person={person} />
+            <UserInfo person={person} />
           </div>
           <div className="main__repos">
-            <Repositories />
+            <h1 className="main__repos-title">Repositories ({repos.length})</h1>
+            <ul className="main__repos-container">
+              {repos.map((repo) => (
+                <Repositories key={repo.id} repo={repo} repos={repos} />
+              ))}
+            </ul>
           </div>
         </div>
       </main>

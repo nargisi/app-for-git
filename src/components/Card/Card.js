@@ -1,14 +1,10 @@
 import React from 'react';
 import './Card.css';
 
-function Card() {
+function Card({ person }) {
   return (
     <div className="card__container">
-      <img
-        className="card__picture"
-        src="https://avatars.githubusercontent.com/u/810438?v=4"
-        alt="User"
-      />
+      <img className="card__picture" src={person.avatar_url} alt="User" />
     </div>
   );
 }

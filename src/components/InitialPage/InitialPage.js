@@ -5,6 +5,7 @@ import PageState from '../PageState/PageState';
 import api from '../../utils/Api';
 import EmptyState from '../EmptyState/EmptyState';
 import Preloader from '../Preloader/Preloader';
+import Main from '../Main/Main';
 
 function InitialPage() {
   const [person, setPerson] = useState({});
@@ -29,15 +30,20 @@ function InitialPage() {
           setPerson(res[1]);
           // console.log(res);
         })
-        .catch((err) => console.log(err))
+        .catch((err) => {
+          if (err.status === 404) {
+            setPerson({});
+            console.log(err);
+          }
+        })
         .finally(() => {
           setSearchIsCompleted(true);
           setIsLoading(false);
         });
     }
   };
-  console.log(repos);
-  console.log(person);
+  // console.log(repos);
+  // console.log(person);
 
   if (isLoading) {
     return <Preloader />;
@@ -50,13 +56,15 @@ function InitialPage() {
         value={searchValue}
         onChange={handleChangeSearchValue}
       />
-      <div>{JSON.stringify(repos)}</div>
-      <PageState
-        icon={Icon}
-        description={''}
-        title={'Start with searching a GitHub user'}
-      />
-      {/* {searchIsCompleted && <EmptyState />} */}
+      {searchIsCompleted ? (
+        <Main repos={repos} person={person} />
+      ) : (
+        <PageState
+          icon={Icon}
+          description={''}
+          title={'Start with searching a GitHub user'}
+        />
+      )}
     </>
   );
 }

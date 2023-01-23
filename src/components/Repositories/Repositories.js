@@ -1,18 +1,21 @@
 import React from 'react';
 import '../../components/Repositories/Repositories.css';
 
-function Repositories(props) {
+function Repositories({ repo }) {
   return (
-    <div className="repositories__container">
-      <h1 className="repositories__title">Repositories ({props.length})</h1>
-      <div className="repositories__item">
-        <h2 className="repositories__item-title">{props.title}</h2>
-        <p className="repositories__item-description">
-          Tweak React components in real time. (Deprecated: use Fast Refresh
-          instead.
-        </p>
-      </div>
-    </div>
+    <>
+      <li className="repositories__item">
+        <a
+          className="repositories__link"
+          href={repo.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="repositories__item-title">{repo.name}</h2>
+        </a>
+        <p className="repositories__item-description">{repo.description}</p>
+      </li>
+    </>
   );
 }
 
