@@ -1,0 +1,33 @@
+.pagination {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: #808080;
+}
+
+
+.pagination__num {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+
+.pagination__break {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 138.5%;
+    color: #808080;
+}
+
+
+.pagination__active {
+    color: #0064EB;
+}

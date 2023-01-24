@@ -3,10 +3,11 @@ import '../../components/Main/Main.css';
 import Card from '../Card/Card';
 import EmptyListRepos from '../EmptyListRepos/EmptyListRepos';
 import EmptyState from '../EmptyState/EmptyState';
+import Paginate from '../Paginate/Paginate';
 import Repositories from '../Repositories/Repositories';
 import UserInfo from '../UserInfo/UserInfo';
 
-function Main({ repos, person }) {
+function Main({ repos, person, fetchCallBack, totalRepos }) {
   if (!person) {
     return <EmptyState />;
   }
@@ -23,13 +24,17 @@ function Main({ repos, person }) {
           ) : (
             <div className="main__repos">
               <h1 className="main__repos-title">
-                Repositories ({repos.length})
+                Repositories ({person.public_repos})
               </h1>
               <ul className="main__repos-container">
                 {repos.map((repo) => (
                   <Repositories key={repo.id} repo={repo} repos={repos} />
                 ))}
               </ul>
+              <Paginate
+                totalRepos={person.public_repos}
+                fetchCallBack={fetchCallBack}
+              />
             </div>
           )}
         </div>

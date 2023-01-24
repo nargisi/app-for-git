@@ -1,35 +1,32 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import { perPage } from '../../utils/constants';
+import '../Paginate/Paginate.css';
 
-export default function Paginate(props) {
-  const { data } = props;
-  const [currentItems, setCurrentItems] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
-  const [pageCount, setPageCount] = useState(0);
-  const itemsPerPage = 6;
-
-  useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(data.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(data.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, data]);
-
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
-
-    setItemOffset(newOffset);
+export default function Paginate({ totalRepos, fetchCallBack }) {
+  const pageCount = Math.ceil(totalRepos / perPage);
+  // console.log('pageCount', pageCount);
+  // const pageCount = 4;
+  const handlePageClick = (data) => {
+    fetchCallBack(data.selected + 1);
+    console.log('data', data);
   };
-
   return (
     <>
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=">"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        // pageRangeDisplayed={perPage}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel="<"
         renderOnZeroPageCount={null}
+        containerClassName="pagination"
+        nextClassName="pagination__num"
+        previousClassName="pagination__num"
+        pageClassName="pagination__num"
+        breakClassName="pagination__break"
+        activeLinkClassName="pagination__active"
       />
     </>
   );

@@ -1,4 +1,4 @@
-import { API_CONFIG } from './constants';
+import { API_CONFIG, perPage } from './constants';
 
 class Api {
   constructor(options) {
@@ -24,10 +24,13 @@ class Api {
       });
   }
 
-  getRepositories(username) {
-    return fetch(`${this._baseURL}/users/${username}/repos`, {
-      headers: { ...this._headers },
-    })
+  getRepositories(username, pageNumber) {
+    return fetch(
+      `${this._baseURL}/users/${username}/repos?page=${pageNumber}&per_page=${perPage}`,
+      {
+        headers: { ...this._headers },
+      }
+    )
       .then(this._checkResponse)
       .catch((err) => {
         console.log(err);
