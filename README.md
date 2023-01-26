@@ -1,6 +1,13 @@
 ### app-for-git
 
-## Стек: React.js, JS, Flexbox, react-paginate
+## Stack: React.js, JS, Flexbox, react-paginate
 
-Проект написан с ипользованием библиотеки React.js. Он позволяет получать информацию
-о пользователях и их репозиториях на GitHub. При введении в поисковую строку username и нажатии клавиши Enter выполняются запросы к api GitHub. Реализован постраничный просмотр с помощью react-paginate. Адаптивная верстка.
+This project is an interface for GitHub api.
+
+# Features:
+
+- get user information and their repositories with pagination by username;
+
+- adaptyve layout.
+
+## <a href="https://www.figma.com/file/nPPYeW9okkBbIfxafG8XJP/Startup-Summer-2022-Task?node-id=288%3A20&t=SJTtdNJ0yKwNPYbh-0">Figma</a>
