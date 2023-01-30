@@ -24,9 +24,9 @@ class Api {
       });
   }
 
-  getRepositories(username, pageNumber) {
+  getRepositories(username, page) {
     return fetch(
-      `${this._baseURL}/users/${username}/repos?page=${pageNumber}&per_page=${perPage}`,
+      `${this._baseURL}/users/${username}/repos?page=${page}&per_page=${perPage}`,
       {
         headers: { ...this._headers },
       }

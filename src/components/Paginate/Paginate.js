@@ -1,15 +1,12 @@
-// import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { perPage } from '../../utils/constants';
 import '../Paginate/Paginate.css';
 
-export default function Paginate({ totalRepos, fetchCallBack }) {
+export default function Paginate({ totalRepos, setPage }) {
   const pageCount = Math.ceil(totalRepos / perPage);
-  // console.log('pageCount', pageCount);
   // const pageCount = 4;
   const handlePageClick = (data) => {
-    fetchCallBack(data.selected + 1);
-    console.log('data', data);
+    setPage(data.selected + 1);
   };
   return (
     <>
@@ -17,7 +14,6 @@ export default function Paginate({ totalRepos, fetchCallBack }) {
         breakLabel="..."
         nextLabel=">"
         onPageChange={handlePageClick}
-        // pageRangeDisplayed={perPage}
         pageCount={pageCount}
         previousLabel="<"
         renderOnZeroPageCount={null}
@@ -26,7 +22,8 @@ export default function Paginate({ totalRepos, fetchCallBack }) {
         previousClassName="pagination__num"
         pageClassName="pagination__num"
         breakClassName="pagination__break"
-        activeLinkClassName="pagination__active"
+        activeLinkClassName="pagination__link-active"
+        activeClassName="pagination__active"
       />
     </>
   );

@@ -1,9 +1,11 @@
 .pagination {
     list-style-type: none;
     display: flex;
+    justify-content: flex-end;
     margin: 0;
     padding: 0;
     color: #808080;
+    margin-bottom: 30px;
 }
 
 
@@ -13,10 +15,16 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
-    margin-right: 16px;
+    padding: 3px 8px;
+    gap: 16px;
     cursor: pointer;
+    border-radius: 3px;
 }
 
+
+.pagination__num:hover {
+    color: #0064EB;
+}
 
 .pagination__break {
     font-family: 'Inter';
@@ -29,5 +37,6 @@
 
 
 .pagination__active {
-    color: #0064EB;
+    background-color: #0064EB;
+    color: #FFFFFF;
 }
