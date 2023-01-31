@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { perPage } from '../../utils/constants';
 import '../Paginate/Paginate.css';

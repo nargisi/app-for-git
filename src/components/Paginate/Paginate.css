@@ -24,6 +24,7 @@
 
 .pagination__num:hover {
     color: #0064EB;
+    font-weight: 900;
 }
 
 .pagination__break {
@@ -39,4 +40,5 @@
 .pagination__active {
     background-color: #0064EB;
     color: #FFFFFF;
+    font-weight: 500;
 }
